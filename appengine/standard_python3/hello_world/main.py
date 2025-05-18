@@ -15,7 +15,7 @@
 # [START gae_python38_app]
 # [START gae_python3_app]
 from flask import Flask
-
+import random
 
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
 # called `app` in `main.py`.
@@ -24,12 +24,12 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    """Return a friendly HTTP greeting.
+    """Return a random number as a string.
 
     Returns:
-        A string with the words 'Hello World!'.
+        A string with a random integer between 1 and 100.
     """
-    return "Hello World!"
+    return f"Random number: {random.randint(1, 100)}"
 
 
 if __name__ == "__main__":
